@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Operator</th>
+                    <th scope="col">Numer of users</th>
+                    <th scope="col">User OK</th>
+                    <th scope="col">User Partialy OK</th>
+                    <th scope="col">User Not OK</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for operator in operator_data %}
+                    <tr>
+                        <td>{{ operator.operator }}</td>
+                        <td>{{ operator.number_of_users }}</td>
+                        <td>{{ operator.user_ok }}</td>
+                        <td>{{ operator.user_pok }}</td>
+                        <td>{{ operator.user_nok }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

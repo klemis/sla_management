@@ -10,12 +10,11 @@ class Country(models.Model):
 		verbose_name_plural = "Countries"
 
 #TODO
-# 1.Create realation between Operators and Country
-# 2.Create separate class for loading csv insted od class Operator
+# 1.Create separate class for loading csv insted od class Operator
 
 class Operator(models.Model):
-	country = models.CharField(max_length=100)
-	# country = models.ForeignKey('Country', on_delete=models.PROTECT)
+	# country = models.CharField(max_length=100)
+	country = models.ForeignKey('Country', on_delete=models.CASCADE)
 	operator = models.CharField(max_length=100)
 	number_of_users = models.IntegerField()
 	user_ok = models.IntegerField()
